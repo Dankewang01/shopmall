@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .input-group{
+            position: relative;
+            padding: 20px;
+            width: 250px;
+        }
+        .input-group input{
+            width: 200px;
+            display: inline-block;
+        }
+        .inline-group span{
+            display: inline-block;
+            position: absolute;
+            height: 12px;
+            font-size: 8px;
+            border: 1px solid red;
+            background-color: coral;
+            color: white;
+            top: 41px;
+            left: 20px;
+            width: 202px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/form3/" method="POST">
+        <div class="input-group">
+{#          接收后台传过来的form对象，自动生成input标签#}
+            姓名：{{ form.user }}
+{#          从后台传过来的error是字典，直接{{ error.user.0 }}呈现错误信息#}
+{#          如果后台返回了错误信息，将错误信息放入span标签，在页面显示，否则不显示#}
+            {% if error.user.0 %}
+            <span>{{ error.user.0 }}</span>
+            {% endif %}
+        </div>
+        <div class="input-group">
+            密码：{{ form.pwd }}
+            {% if error.pwd.0 %}
+            <span>{{ error.pwd.0 }}</span>
+            {% endif %}
+        </div>
+        <div class="input-group">
+            邮箱地址：{{ form.email }}
+            {% if error.email.0 %}
+            <span>{{ error.email.0 }}</span>
+            {% endif %}
+        </div>
+         <div class="input-group">
+            {{ form.memo }}
+            {% if error.memo.0 %}
+            <span>{{ error.memo.0 }}</span>
+            {% endif %}
+        </div>
+             <div class="input-group">
+            图书类型：{{ form.book_type }}
+            {% if error.book_type.0 %}
+            <span>{{ error.book_type.0 }}</span>
+            {% endif %}
+        </div>
+
+        <div>
+            <input type="submit" value="提交" />
+        </div>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FORM1</title>
+</head>
+<body>
+{# {{ error }}接收后台返回的错误信息封装在ul，li标签里面：#}
+    {{ error }}
+    <form action="/form1/" method="POST">
+        <div>
+            <input type="text" name="user" />
+        </div>
+        <div>
+            <input type="text" name="pwd" />
+        </div>
+        <div>
+            <input type="submit" value="提交" />
+        </div>
+    </form>
+</body>
+</html>
