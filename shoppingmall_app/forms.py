@@ -9,7 +9,7 @@ from django import forms
 from shoppingmall_app import models
 
 
-class Form1(forms.Form):
+class Form3(forms.Form):
     user = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'c1'}),
         error_messages={'required': '用户名不能为空'}, )
@@ -32,8 +32,8 @@ class Form1(forms.Form):
 
     # 写上以下代码就不用担心数据库添加了数据而不能及时获取了
     def __init__(self, *args, **kwargs):
-        # 每次创建Form1对象时执行init方法
-        super(Form1, self).__init__(*args, **kwargs)
+        # 每次创建Form3对象时执行init方法
+        super(Form3, self).__init__(*args, **kwargs)
 
         self.fields['book_type'] = forms.CharField(
             widget=forms.widgets.Select(choices=models.BookType.objects.values_list('id', 'caption'),

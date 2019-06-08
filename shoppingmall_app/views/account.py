@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponse
-from shoppingmall_app.forms import Form1
+from shoppingmall_app.forms import *
 from shoppingmall_app.models import *
 
 def form1(request):
@@ -42,13 +42,13 @@ def form2(request):
 
 def form3(request):
     if request.method == "POST":
-        f = Form1(request.POST)
+        f = Form3(request.POST)
         if f.is_valid():
             print(f.cleaned_data)
         else:
             return render(request,"shoppingmall/form3.html",{"error":f.errors,"form":f})
     else:
         # 如果不是post提交数据，就不传参数创建对象，并将对象返回给前台，直接生成input标签，内容为空
-        f = Form1()
+        f = Form3()
         return render(request,"shoppingmall/form3.html",{"form":f})
     return render(request,"shoppingmall/form3.html")

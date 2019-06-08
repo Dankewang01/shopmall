@@ -50,18 +50,40 @@
             <span>{{ error.email.0 }}</span>
             {% endif %}
         </div>
-         <div class="input-group">
-            {{ form.memo }}
+        <div class="input-group">
+            详细描述:{{ form.memo }}
             {% if error.memo.0 %}
             <span>{{ error.memo.0 }}</span>
             {% endif %}
         </div>
-             <div class="input-group">
+        <div class="input-group">
             图书类型：{{ form.book_type }}
             {% if error.book_type.0 %}
             <span>{{ error.book_type.0 }}</span>
             {% endif %}
         </div>
+
+        <div class="input-group">
+            手机号：{{ form.phone }}
+            {% if error.phone.0 %}
+            <span>{{ error.phone.0 }}</span>
+            {% endif %}
+        </div>
+
+        <div class="input-group">
+            用户类型：{{ form.user_type }}
+            {% if error.user_type.0 %}
+            <span>{{ error.user_type }}</span>
+            {% endif %}
+        </div>
+
+        <div class="input-group">
+            主题：{{ form.title }}
+            {% if error.title.0 %}
+            <span>{{ error.title }}</span>
+            {% endif %}
+        </div>
+
 
         <div>
             <input type="submit" value="提交" />

@@ -17,7 +17,7 @@ class BookType(models.Model):
 
 class Book(models.Model):
     """
-    图书
+    图书in
     """
     name = models.CharField(max_length=64)
     pages = models.IntegerField()
@@ -26,3 +26,5 @@ class Book(models.Model):
 
     authors = models.ManyToManyField(Author)
     book_type = models.ForeignKey(BookType)
+
+#class BookType(models.Model):
